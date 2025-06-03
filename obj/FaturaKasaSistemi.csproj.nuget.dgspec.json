@@ -1,0 +1,100 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\repos\\FinalProjesi\\FaturaKasaSistemi\\FaturaKasaSistemi.csproj": {}
+  },
+  "projects": {
+    "C:\\repos\\FinalProjesi\\FaturaKasaSistemi\\FaturaKasaSistemi.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\repos\\FinalProjesi\\FaturaKasaSistemi\\FaturaKasaSistemi.csproj",
+        "projectName": "FaturaKasaSistemi",
+        "projectPath": "C:\\repos\\FinalProjesi\\FaturaKasaSistemi\\FaturaKasaSistemi.csproj",
+        "packagesPath": "C:\\Users\\weetz\\.nuget\\packages\\",
+        "outputPath": "C:\\repos\\FinalProjesi\\FaturaKasaSistemi\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\weetz\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net9.0-windows"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net9.0-windows7.0": {
+            "targetAlias": "net9.0-windows",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.300"
+      },
+      "frameworks": {
+        "net9.0-windows7.0": {
+          "targetAlias": "net9.0-windows",
+          "dependencies": {
+            "MySql.Data": {
+              "target": "Package",
+              "version": "[9.3.0, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.3, )"
+            },
+            "itext7": {
+              "target": "Package",
+              "version": "[9.2.0, )"
+            },
+            "itext7.bouncy-castle-adapter": {
+              "target": "Package",
+              "version": "[9.2.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.Net.Sdk.Compilers.Toolset",
+              "version": "[9.0.300, 9.0.300]"
+            }
+          ],
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            },
+            "Microsoft.WindowsDesktop.App.WindowsForms": {
+              "privateAssets": "none"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.300/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

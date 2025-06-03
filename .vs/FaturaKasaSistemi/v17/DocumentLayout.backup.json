@@ -1,0 +1,69 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\repos\\FinalProjesi\\FaturaKasaSistemi\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{6DEC58C7-B912-4211-95A7-3219AC2907B8}|FaturaKasaSistemi.csproj|c:\\repos\\finalprojesi\\faturakasasistemi\\invoiceform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6DEC58C7-B912-4211-95A7-3219AC2907B8}|FaturaKasaSistemi.csproj|solutionrelative:invoiceform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6DEC58C7-B912-4211-95A7-3219AC2907B8}|FaturaKasaSistemi.csproj|c:\\repos\\finalprojesi\\faturakasasistemi\\invoiceform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{6DEC58C7-B912-4211-95A7-3219AC2907B8}|FaturaKasaSistemi.csproj|solutionrelative:invoiceform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6DEC58C7-B912-4211-95A7-3219AC2907B8}|FaturaKasaSistemi.csproj|c:\\repos\\finalprojesi\\faturakasasistemi\\customerform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{6DEC58C7-B912-4211-95A7-3219AC2907B8}|FaturaKasaSistemi.csproj|solutionrelative:customerform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "InvoiceForm.cs",
+              "DocumentMoniker": "C:\\repos\\FinalProjesi\\FaturaKasaSistemi\\InvoiceForm.cs",
+              "RelativeDocumentMoniker": "InvoiceForm.cs",
+              "ToolTip": "C:\\repos\\FinalProjesi\\FaturaKasaSistemi\\InvoiceForm.cs",
+              "RelativeToolTip": "InvoiceForm.cs",
+              "ViewState": "AgIAAOwAAAAAAAAAAAAtwAkBAABcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-03T22:05:43.033Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "InvoiceForm.cs [Design]",
+              "DocumentMoniker": "C:\\repos\\FinalProjesi\\FaturaKasaSistemi\\InvoiceForm.cs",
+              "RelativeDocumentMoniker": "InvoiceForm.cs",
+              "ToolTip": "C:\\repos\\FinalProjesi\\FaturaKasaSistemi\\InvoiceForm.cs [Design]",
+              "RelativeToolTip": "InvoiceForm.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-03T22:06:44.074Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "CustomerForm.cs [Design]",
+              "DocumentMoniker": "C:\\repos\\FinalProjesi\\FaturaKasaSistemi\\CustomerForm.cs",
+              "RelativeDocumentMoniker": "CustomerForm.cs",
+              "ToolTip": "C:\\repos\\FinalProjesi\\FaturaKasaSistemi\\CustomerForm.cs [Design]",
+              "RelativeToolTip": "CustomerForm.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-03T22:06:38.076Z",
+              "EditorCaption": " [Design]"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
