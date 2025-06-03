@@ -10,6 +10,8 @@ namespace FaturaKasaSistemi
         public ProductForm()
         {
             InitializeComponent();
+            this.StartPosition = FormStartPosition.CenterScreen;
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             LoadProducts();
         }
 
@@ -53,6 +55,10 @@ namespace FaturaKasaSistemi
                         DataTable dt = new DataTable();
                         adapter.Fill(dt);
                         dataGridView1.DataSource = dt;
+                        if (dataGridView1.Columns["id"] != null) dataGridView1.Columns["id"].HeaderText = "ID";
+                        if (dataGridView1.Columns["name"] != null) dataGridView1.Columns["name"].HeaderText = "Ürün Adı";
+                        if (dataGridView1.Columns["price"] != null) dataGridView1.Columns["price"].HeaderText = "Fiyat";
+                        if (dataGridView1.Columns["vat_rate"] != null) dataGridView1.Columns["vat_rate"].HeaderText = "KDV (%)";
                     }
                 }
                 catch (Exception ex)

@@ -24,4 +24,10 @@ public partial class Form1 : Form
         CustomerForm customerForm = new CustomerForm();
         customerForm.ShowDialog();
     }
+
+    private void btnKasaRaporu_Click(object sender, EventArgs e)
+    {
+        KasaRaporuForm kasaRaporuForm = new KasaRaporuForm();
+        kasaRaporuForm.ShowDialog();
+    }
 }

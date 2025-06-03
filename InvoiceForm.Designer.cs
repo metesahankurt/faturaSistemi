@@ -28,6 +28,9 @@ namespace FaturaKasaSistemi
             lblTotal = new Label();
             lblSelectCustomer = new Label();
             cmbCustomers = new ComboBox();
+            lblCustomerDetail = new Label();
+            btnSaveInvoice = new Button();
+            btnExportPdf = new Button();
             ((System.ComponentModel.ISupportInitialize)numQuantity).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
@@ -82,8 +85,9 @@ namespace FaturaKasaSistemi
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Location = new Point(20, 180);
             dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(500, 200);
+            dataGridView1.Size = new Size(500, 120);
             dataGridView1.TabIndex = 7;
+            dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             // 
             // lblSubtotal
             // 
@@ -128,12 +132,45 @@ namespace FaturaKasaSistemi
             cmbCustomers.Name = "cmbCustomers";
             cmbCustomers.Size = new Size(200, 23);
             cmbCustomers.TabIndex = 1;
+            cmbCustomers.SelectedIndexChanged += cmbCustomers_SelectedIndexChanged;
+            // 
+            // lblCustomerDetail
+            // 
+            lblCustomerDetail = new Label();
+            lblCustomerDetail.AutoSize = true;
+            lblCustomerDetail.Location = new Point(320, 15);
+            lblCustomerDetail.Name = "lblCustomerDetail";
+            lblCustomerDetail.Size = new Size(0, 15);
+            lblCustomerDetail.TabIndex = 11;
+            lblCustomerDetail.Text = "";
+            // 
+            // btnSaveInvoice
+            // 
+            btnSaveInvoice = new Button();
+            btnSaveInvoice.Location = new Point(110, 310);
+            btnSaveInvoice.Name = "btnSaveInvoice";
+            btnSaveInvoice.Size = new Size(200, 30);
+            btnSaveInvoice.TabIndex = 8;
+            btnSaveInvoice.Text = "Faturayı Kaydet";
+            btnSaveInvoice.UseVisualStyleBackColor = true;
+            btnSaveInvoice.Click += btnSaveInvoice_Click;
+            // 
+            // btnExportPdf
+            // 
+            btnExportPdf = new Button();
+            btnExportPdf.Location = new Point(110, 350);
+            btnExportPdf.Name = "btnExportPdf";
+            btnExportPdf.Size = new Size(200, 30);
+            btnExportPdf.TabIndex = 9;
+            btnExportPdf.Text = "PDF Olarak Çıkart";
+            btnExportPdf.UseVisualStyleBackColor = true;
+            btnExportPdf.Click += btnExportPdf_Click;
             // 
             // InvoiceForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(550, 450);
+            ClientSize = new Size(550, 400);
             Controls.Add(lblTotal);
             Controls.Add(lblVat);
             Controls.Add(lblSubtotal);
@@ -145,6 +182,9 @@ namespace FaturaKasaSistemi
             Controls.Add(lblProduct);
             Controls.Add(lblSelectCustomer);
             Controls.Add(cmbCustomers);
+            Controls.Add(lblCustomerDetail);
+            Controls.Add(btnSaveInvoice);
+            Controls.Add(btnExportPdf);
             FormBorderStyle = FormBorderStyle.FixedDialog;
             MaximizeBox = false;
             MinimizeBox = false;
@@ -169,5 +209,8 @@ namespace FaturaKasaSistemi
         private System.Windows.Forms.Label lblTotal;
         private System.Windows.Forms.Label lblSelectCustomer;
         private System.Windows.Forms.ComboBox cmbCustomers;
+        private System.Windows.Forms.Label lblCustomerDetail;
+        private System.Windows.Forms.Button btnSaveInvoice;
+        private System.Windows.Forms.Button btnExportPdf;
     }
 } 
