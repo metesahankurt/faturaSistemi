@@ -2,6 +2,7 @@ using System;
 using System.Data;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
+using System.Runtime.InteropServices;
 
 namespace FaturaKasaSistemi
 {
@@ -148,6 +149,39 @@ namespace FaturaKasaSistemi
                         MessageBox.Show("Veritabanı hatası: " + ex.Message, "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
+            }
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnMinimize_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void btnMinimize_Paint(object sender, PaintEventArgs e)
+        {
+            var g = e.Graphics;
+            using (var pen = new Pen(System.Drawing.Color.RoyalBlue, 3))
+            {
+                int y = btnMinimize.Height - 10;
+                g.DrawLine(pen, 8, y, btnMinimize.Width - 8, y);
+            }
+        }
+
+        [DllImport("user32.dll")]
+        public static extern bool ReleaseCapture();
+        [DllImport("user32.dll")]
+        public static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
+        private void ProductForm_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                ReleaseCapture();
+                SendMessage(this.Handle, 0xA1, 0x2, 0);
             }
         }
     }

@@ -17,151 +17,224 @@ namespace FaturaKasaSistemi
 
         private void InitializeComponent()
         {
-            this.txtFirstName = new System.Windows.Forms.TextBox();
-            this.txtLastName = new System.Windows.Forms.TextBox();
-            this.cmbIl = new System.Windows.Forms.ComboBox();
-            this.cmbIlce = new System.Windows.Forms.ComboBox();
-            this.txtAddress = new System.Windows.Forms.TextBox();
-            this.btnSave = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.SuspendLayout();
+            txtFirstName = new TextBox();
+            txtLastName = new TextBox();
+            cmbIl = new ComboBox();
+            cmbIlce = new ComboBox();
+            txtAddress = new TextBox();
+            btnSave = new Button();
+            label1 = new Label();
+            label2 = new Label();
+            label3 = new Label();
+            label4 = new Label();
+            label5 = new Label();
+            btnClose = new Button();
+            btnMinimize = new Button();
+            label6 = new Label();
+            SuspendLayout();
             // 
             // txtFirstName
             // 
-            this.txtFirstName.Location = new System.Drawing.Point(120, 20);
-            this.txtFirstName.Name = "txtFirstName";
-            this.txtFirstName.Size = new System.Drawing.Size(200, 20);
-            this.txtFirstName.TabIndex = 0;
+            txtFirstName.Font = new Font("Segoe UI", 11F);
+            txtFirstName.Location = new Point(140, 69);
+            txtFirstName.Margin = new Padding(4, 3, 4, 3);
+            txtFirstName.Name = "txtFirstName";
+            txtFirstName.Size = new Size(233, 27);
+            txtFirstName.TabIndex = 0;
             // 
             // txtLastName
             // 
-            this.txtLastName.Location = new System.Drawing.Point(120, 50);
-            this.txtLastName.Name = "txtLastName";
-            this.txtLastName.Size = new System.Drawing.Size(200, 20);
-            this.txtLastName.TabIndex = 1;
+            txtLastName.Font = new Font("Segoe UI", 11F);
+            txtLastName.Location = new Point(140, 104);
+            txtLastName.Margin = new Padding(4, 3, 4, 3);
+            txtLastName.Name = "txtLastName";
+            txtLastName.Size = new Size(233, 27);
+            txtLastName.TabIndex = 1;
             // 
             // cmbIl
             // 
-            this.cmbIl.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbIl.FormattingEnabled = true;
-            this.cmbIl.Location = new System.Drawing.Point(120, 80);
-            this.cmbIl.Name = "cmbIl";
-            this.cmbIl.Size = new System.Drawing.Size(200, 21);
-            this.cmbIl.TabIndex = 2;
-            this.cmbIl.SelectedIndexChanged += new System.EventHandler(this.cmbIl_SelectedIndexChanged);
+            cmbIl.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbIl.Font = new Font("Segoe UI", 11F);
+            cmbIl.FormattingEnabled = true;
+            cmbIl.Location = new Point(140, 138);
+            cmbIl.Margin = new Padding(4, 3, 4, 3);
+            cmbIl.Name = "cmbIl";
+            cmbIl.Size = new Size(233, 28);
+            cmbIl.TabIndex = 2;
+            cmbIl.SelectedIndexChanged += cmbIl_SelectedIndexChanged;
             // 
             // cmbIlce
             // 
-            this.cmbIlce.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbIlce.FormattingEnabled = true;
-            this.cmbIlce.Location = new System.Drawing.Point(120, 110);
-            this.cmbIlce.Name = "cmbIlce";
-            this.cmbIlce.Size = new System.Drawing.Size(200, 21);
-            this.cmbIlce.TabIndex = 3;
+            cmbIlce.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbIlce.Font = new Font("Segoe UI", 11F);
+            cmbIlce.FormattingEnabled = true;
+            cmbIlce.Location = new Point(140, 173);
+            cmbIlce.Margin = new Padding(4, 3, 4, 3);
+            cmbIlce.Name = "cmbIlce";
+            cmbIlce.Size = new Size(233, 28);
+            cmbIlce.TabIndex = 3;
             // 
             // txtAddress
             // 
-            this.txtAddress.Location = new System.Drawing.Point(120, 140);
-            this.txtAddress.Multiline = true;
-            this.txtAddress.Name = "txtAddress";
-            this.txtAddress.Size = new System.Drawing.Size(200, 60);
-            this.txtAddress.TabIndex = 4;
+            txtAddress.Font = new Font("Segoe UI", 11F);
+            txtAddress.Location = new Point(140, 208);
+            txtAddress.Margin = new Padding(4, 3, 4, 3);
+            txtAddress.Multiline = true;
+            txtAddress.Name = "txtAddress";
+            txtAddress.Size = new Size(233, 69);
+            txtAddress.TabIndex = 4;
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(120, 210);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(200, 30);
-            this.btnSave.TabIndex = 5;
-            this.btnSave.Text = "Kaydet";
-            this.btnSave.UseVisualStyleBackColor = true;
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            btnSave.BackColor = Color.RoyalBlue;
+            btnSave.FlatAppearance.BorderSize = 0;
+            btnSave.FlatStyle = FlatStyle.Flat;
+            btnSave.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
+            btnSave.ForeColor = Color.White;
+            btnSave.Location = new Point(140, 288);
+            btnSave.Margin = new Padding(4, 3, 4, 3);
+            btnSave.Name = "btnSave";
+            btnSave.Size = new Size(233, 35);
+            btnSave.TabIndex = 5;
+            btnSave.Text = "Kaydet";
+            btnSave.UseVisualStyleBackColor = false;
+            btnSave.Click += btnSave_Click;
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(20, 23);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(23, 13);
-            this.label1.TabIndex = 6;
-            this.label1.Text = "Ad:";
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
+            label1.ForeColor = Color.RoyalBlue;
+            label1.Location = new Point(23, 73);
+            label1.Margin = new Padding(4, 0, 4, 0);
+            label1.Name = "label1";
+            label1.Size = new Size(33, 20);
+            label1.TabIndex = 6;
+            label1.Text = "Ad:";
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(20, 53);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(40, 13);
-            this.label2.TabIndex = 7;
-            this.label2.Text = "Soyad:";
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
+            label2.ForeColor = Color.RoyalBlue;
+            label2.Location = new Point(23, 107);
+            label2.Margin = new Padding(4, 0, 4, 0);
+            label2.Name = "label2";
+            label2.Size = new Size(55, 20);
+            label2.TabIndex = 7;
+            label2.Text = "Soyad:";
             // 
             // label3
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(20, 83);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(15, 13);
-            this.label3.TabIndex = 8;
-            this.label3.Text = "İl:";
+            label3.AutoSize = true;
+            label3.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
+            label3.ForeColor = Color.RoyalBlue;
+            label3.Location = new Point(23, 142);
+            label3.Margin = new Padding(4, 0, 4, 0);
+            label3.Name = "label3";
+            label3.Size = new Size(22, 20);
+            label3.TabIndex = 8;
+            label3.Text = "İl:";
             // 
             // label4
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(20, 113);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(27, 13);
-            this.label4.TabIndex = 9;
-            this.label4.Text = "İlçe:";
+            label4.AutoSize = true;
+            label4.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
+            label4.ForeColor = Color.RoyalBlue;
+            label4.Location = new Point(23, 177);
+            label4.Margin = new Padding(4, 0, 4, 0);
+            label4.Name = "label4";
+            label4.Size = new Size(37, 20);
+            label4.TabIndex = 9;
+            label4.Text = "İlçe:";
             // 
             // label5
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(20, 143);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(37, 13);
-            this.label5.TabIndex = 10;
-            this.label5.Text = "Adres:";
+            label5.AutoSize = true;
+            label5.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
+            label5.ForeColor = Color.RoyalBlue;
+            label5.Location = new Point(23, 211);
+            label5.Margin = new Padding(4, 0, 4, 0);
+            label5.Name = "label5";
+            label5.Size = new Size(54, 20);
+            label5.TabIndex = 10;
+            label5.Text = "Adres:";
             // 
-            // dataGridView1
+            // btnClose
             // 
-            this.dataGridView1.Location = new System.Drawing.Point(120, 250);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(200, 150);
-            this.dataGridView1.TabIndex = 11;
+            btnClose.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btnClose.BackColor = Color.White;
+            btnClose.FlatAppearance.BorderSize = 0;
+            btnClose.FlatStyle = FlatStyle.Flat;
+            btnClose.Font = new Font("Segoe UI", 14F, FontStyle.Bold);
+            btnClose.ForeColor = Color.RoyalBlue;
+            btnClose.Location = new Point(423, 12);
+            btnClose.Margin = new Padding(4, 3, 4, 3);
+            btnClose.Name = "btnClose";
+            btnClose.Size = new Size(35, 35);
+            btnClose.TabIndex = 11;
+            btnClose.Text = "X";
+            btnClose.UseVisualStyleBackColor = false;
+            btnClose.Click += btnClose_Click;
+            // 
+            // btnMinimize
+            // 
+            btnMinimize.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btnMinimize.BackColor = Color.White;
+            btnMinimize.FlatAppearance.BorderSize = 0;
+            btnMinimize.FlatStyle = FlatStyle.Flat;
+            btnMinimize.Font = new Font("Segoe UI", 16F, FontStyle.Bold);
+            btnMinimize.ForeColor = Color.RoyalBlue;
+            btnMinimize.Location = new Point(376, 12);
+            btnMinimize.Margin = new Padding(4, 3, 4, 3);
+            btnMinimize.Name = "btnMinimize";
+            btnMinimize.Size = new Size(35, 35);
+            btnMinimize.TabIndex = 12;
+            btnMinimize.UseVisualStyleBackColor = false;
+            btnMinimize.Click += btnMinimize_Click;
+            btnMinimize.Paint += btnMinimize_Paint;
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
+            label6.ForeColor = Color.RoyalBlue;
+            label6.Location = new Point(172, 21);
+            label6.Margin = new Padding(4, 0, 4, 0);
+            label6.Name = "label6";
+            label6.Size = new Size(162, 20);
+            label6.TabIndex = 13;
+            label6.Text = "Müşteri Kayıt Merkezi";
             // 
             // CustomerForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(344, 412);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.btnSave);
-            this.Controls.Add(this.txtAddress);
-            this.Controls.Add(this.cmbIlce);
-            this.Controls.Add(this.cmbIl);
-            this.Controls.Add(this.txtLastName);
-            this.Controls.Add(this.txtFirstName);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
-            this.Name = "CustomerForm";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "Müşteri Ekle";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            this.ResumeLayout(false);
-            this.PerformLayout();
+            AutoScaleMode = AutoScaleMode.None;
+            BackColor = Color.WhiteSmoke;
+            ClientSize = new Size(474, 335);
+            Controls.Add(label6);
+            Controls.Add(label5);
+            Controls.Add(label4);
+            Controls.Add(label3);
+            Controls.Add(label2);
+            Controls.Add(label1);
+            Controls.Add(btnSave);
+            Controls.Add(txtAddress);
+            Controls.Add(cmbIlce);
+            Controls.Add(cmbIl);
+            Controls.Add(txtLastName);
+            Controls.Add(txtFirstName);
+            Controls.Add(btnClose);
+            Controls.Add(btnMinimize);
+            FormBorderStyle = FormBorderStyle.None;
+            Margin = new Padding(4, 3, 4, 3);
+            MaximizeBox = false;
+            MinimizeBox = false;
+            Name = "CustomerForm";
+            StartPosition = FormStartPosition.CenterParent;
+            Text = "Müşteri Ekle";
+            MouseDown += CustomerForm_MouseDown;
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -177,6 +250,21 @@ namespace FaturaKasaSistemi
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button btnClose;
+        private System.Windows.Forms.Button btnMinimize;
+        private Button button1;
+        private DataGridView dataGridView1;
+        private Button btnAddItem;
+        private NumericUpDown numQuantity;
+        private Label lblQuantity;
+        private ComboBox cmbProducts;
+        private Label lblProduct;
+        private Label lblSelectCustomer;
+        private ComboBox cmbCustomers;
+        private Label lblCustomerDetail;
+        private Button btnSaveInvoice;
+        private Button btnExportPdf;
+        private Button button2;
+        private Label label6;
     }
 } 

@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.IO;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using System.Runtime.InteropServices;
 
 namespace FaturaKasaSistemi
 {
@@ -16,9 +17,33 @@ namespace FaturaKasaSistemi
         {
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
+            this.MinimumSize = new System.Drawing.Size(0, 0);
+            this.MaximumSize = new System.Drawing.Size(0, 0);
+            this.ClientSize = new System.Drawing.Size(474, 320);
             LoadIlIlceData();
             LoadIller();
             cmbIl.SelectedIndexChanged += cmbIl_SelectedIndexChanged;
+            this.Load += CustomerForm_Load;
+            this.Resize += CustomerForm_Resize;
+        }
+
+        private void CustomerForm_Load(object sender, EventArgs e)
+        {
+            UpdateWindowButtons();
+        }
+        private void CustomerForm_Resize(object sender, EventArgs e)
+        {
+            UpdateWindowButtons();
+        }
+        private void UpdateWindowButtons()
+        {
+            int padding = 10;
+            int btnW = 30, btnH = 30;
+            btnClose.Size = btnMinimize.Size = new System.Drawing.Size(btnW, btnH);
+            btnClose.Location = new System.Drawing.Point(this.ClientSize.Width - btnW - padding, padding);
+            btnMinimize.Location = new System.Drawing.Point(this.ClientSize.Width - 2 * btnW - 2 * padding, padding);
+            btnClose.BringToFront();
+            btnMinimize.BringToFront();
         }
 
         private void LoadIlIlceData()
@@ -109,6 +134,39 @@ namespace FaturaKasaSistemi
                 {
                     MessageBox.Show("Veritabanı hatası: " + ex.Message, "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
+            }
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnMinimize_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void btnMinimize_Paint(object sender, PaintEventArgs e)
+        {
+            var g = e.Graphics;
+            using (var pen = new Pen(System.Drawing.Color.RoyalBlue, 3))
+            {
+                int y = btnMinimize.Height - 10;
+                g.DrawLine(pen, 8, y, btnMinimize.Width - 8, y);
+            }
+        }
+
+        [DllImport("user32.dll")]
+        public static extern bool ReleaseCapture();
+        [DllImport("user32.dll")]
+        public static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
+        private void CustomerForm_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                ReleaseCapture();
+                SendMessage(this.Handle, 0xA1, 0x2, 0);
             }
         }
 

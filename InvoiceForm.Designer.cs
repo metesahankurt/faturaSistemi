@@ -17,163 +17,182 @@ namespace FaturaKasaSistemi
 
         private void InitializeComponent()
         {
-            lblProduct = new Label();
-            cmbProducts = new ComboBox();
-            lblQuantity = new Label();
-            numQuantity = new NumericUpDown();
-            btnAddItem = new Button();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(InvoiceForm));
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            button1 = new Button();
             dataGridView1 = new DataGridView();
-            lblSubtotal = new Label();
-            lblVat = new Label();
-            lblTotal = new Label();
+            btnAddItem = new Button();
+            numQuantity = new NumericUpDown();
+            lblQuantity = new Label();
+            cmbProducts = new ComboBox();
+            lblProduct = new Label();
             lblSelectCustomer = new Label();
             cmbCustomers = new ComboBox();
             lblCustomerDetail = new Label();
             btnSaveInvoice = new Button();
             btnExportPdf = new Button();
-            ((System.ComponentModel.ISupportInitialize)numQuantity).BeginInit();
+            btnMinimize = new Button();
+            lblSubtotal = new Label();
+            lblVat = new Label();
+            lblTotal = new Label();
+            label1 = new Label();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)numQuantity).BeginInit();
             SuspendLayout();
             // 
-            // lblProduct
+            // button1
             // 
-            lblProduct.AutoSize = true;
-            lblProduct.Location = new Point(20, 60);
-            lblProduct.Name = "lblProduct";
-            lblProduct.Size = new Size(36, 15);
-            lblProduct.TabIndex = 2;
-            lblProduct.Text = "Ürün:";
+            resources.ApplyResources(button1, "button1");
+            button1.BackColor = Color.White;
+            button1.FlatAppearance.BorderSize = 0;
+            button1.ForeColor = Color.RoyalBlue;
+            button1.Name = "button1";
+            button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
+            // 
+            // dataGridView1
+            // 
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridView1.BackgroundColor = Color.White;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = Color.RoyalBlue;
+            dataGridViewCellStyle1.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            dataGridViewCellStyle1.ForeColor = Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = Color.WhiteSmoke;
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 10F);
+            dataGridViewCellStyle2.ForeColor = Color.Black;
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
+            dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridView1.EnableHeadersVisualStyles = false;
+            resources.ApplyResources(dataGridView1, "dataGridView1");
+            dataGridView1.Name = "dataGridView1";
+            // 
+            // btnAddItem
+            // 
+            btnAddItem.BackColor = Color.RoyalBlue;
+            btnAddItem.FlatAppearance.BorderSize = 0;
+            resources.ApplyResources(btnAddItem, "btnAddItem");
+            btnAddItem.ForeColor = Color.White;
+            btnAddItem.Name = "btnAddItem";
+            btnAddItem.UseVisualStyleBackColor = false;
+            btnAddItem.Click += btnAddItem_Click;
+            // 
+            // numQuantity
+            // 
+            resources.ApplyResources(numQuantity, "numQuantity");
+            numQuantity.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
+            numQuantity.Name = "numQuantity";
+            numQuantity.Value = new decimal(new int[] { 1, 0, 0, 0 });
+            // 
+            // lblQuantity
+            // 
+            resources.ApplyResources(lblQuantity, "lblQuantity");
+            lblQuantity.ForeColor = Color.RoyalBlue;
+            lblQuantity.Name = "lblQuantity";
             // 
             // cmbProducts
             // 
             cmbProducts.DropDownStyle = ComboBoxStyle.DropDownList;
-            cmbProducts.Location = new Point(110, 57);
+            resources.ApplyResources(cmbProducts, "cmbProducts");
             cmbProducts.Name = "cmbProducts";
-            cmbProducts.Size = new Size(200, 23);
-            cmbProducts.TabIndex = 3;
             // 
-            // lblQuantity
+            // lblProduct
             // 
-            lblQuantity.AutoSize = true;
-            lblQuantity.Location = new Point(20, 100);
-            lblQuantity.Name = "lblQuantity";
-            lblQuantity.Size = new Size(44, 15);
-            lblQuantity.TabIndex = 4;
-            lblQuantity.Text = "Miktar:";
-            // 
-            // numQuantity
-            // 
-            numQuantity.Location = new Point(110, 97);
-            numQuantity.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
-            numQuantity.Name = "numQuantity";
-            numQuantity.Size = new Size(200, 23);
-            numQuantity.TabIndex = 5;
-            numQuantity.Value = new decimal(new int[] { 1, 0, 0, 0 });
-            // 
-            // btnAddItem
-            // 
-            btnAddItem.Location = new Point(110, 135);
-            btnAddItem.Name = "btnAddItem";
-            btnAddItem.Size = new Size(200, 30);
-            btnAddItem.TabIndex = 6;
-            btnAddItem.Text = "Faturaya Ekle";
-            btnAddItem.UseVisualStyleBackColor = true;
-            btnAddItem.Click += btnAddItem_Click;
-            // 
-            // dataGridView1
-            // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(20, 180);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(500, 120);
-            dataGridView1.TabIndex = 7;
-            dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            // 
-            // lblSubtotal
-            // 
-            lblSubtotal.AutoSize = true;
-            lblSubtotal.Location = new Point(20, 400);
-            lblSubtotal.Name = "lblSubtotal";
-            lblSubtotal.Size = new Size(80, 15);
-            lblSubtotal.TabIndex = 8;
-            lblSubtotal.Text = "Ara Toplam: 0";
-            // 
-            // lblVat
-            // 
-            lblVat.AutoSize = true;
-            lblVat.Location = new Point(200, 400);
-            lblVat.Name = "lblVat";
-            lblVat.Size = new Size(41, 15);
-            lblVat.TabIndex = 9;
-            lblVat.Text = "KDV: 0";
-            // 
-            // lblTotal
-            // 
-            lblTotal.AutoSize = true;
-            lblTotal.Location = new Point(350, 400);
-            lblTotal.Name = "lblTotal";
-            lblTotal.Size = new Size(92, 15);
-            lblTotal.TabIndex = 10;
-            lblTotal.Text = "Genel Toplam: 0";
+            resources.ApplyResources(lblProduct, "lblProduct");
+            lblProduct.ForeColor = Color.RoyalBlue;
+            lblProduct.Name = "lblProduct";
             // 
             // lblSelectCustomer
             // 
-            lblSelectCustomer.AutoSize = true;
-            lblSelectCustomer.Location = new Point(20, 15);
+            resources.ApplyResources(lblSelectCustomer, "lblSelectCustomer");
+            lblSelectCustomer.ForeColor = Color.RoyalBlue;
             lblSelectCustomer.Name = "lblSelectCustomer";
-            lblSelectCustomer.Size = new Size(71, 15);
-            lblSelectCustomer.TabIndex = 0;
-            lblSelectCustomer.Text = "Müşteri Seç:";
             // 
             // cmbCustomers
             // 
             cmbCustomers.DropDownStyle = ComboBoxStyle.DropDownList;
-            cmbCustomers.Location = new Point(110, 12);
+            resources.ApplyResources(cmbCustomers, "cmbCustomers");
             cmbCustomers.Name = "cmbCustomers";
-            cmbCustomers.Size = new Size(200, 23);
-            cmbCustomers.TabIndex = 1;
             cmbCustomers.SelectedIndexChanged += cmbCustomers_SelectedIndexChanged;
             // 
             // lblCustomerDetail
             // 
-            lblCustomerDetail = new Label();
-            lblCustomerDetail.AutoSize = true;
-            lblCustomerDetail.Location = new Point(320, 15);
+            resources.ApplyResources(lblCustomerDetail, "lblCustomerDetail");
+            lblCustomerDetail.ForeColor = Color.Gray;
             lblCustomerDetail.Name = "lblCustomerDetail";
-            lblCustomerDetail.Size = new Size(0, 15);
-            lblCustomerDetail.TabIndex = 11;
-            lblCustomerDetail.Text = "";
             // 
             // btnSaveInvoice
             // 
-            btnSaveInvoice = new Button();
-            btnSaveInvoice.Location = new Point(110, 310);
+            btnSaveInvoice.BackColor = Color.RoyalBlue;
+            btnSaveInvoice.FlatAppearance.BorderSize = 0;
+            resources.ApplyResources(btnSaveInvoice, "btnSaveInvoice");
+            btnSaveInvoice.ForeColor = Color.White;
             btnSaveInvoice.Name = "btnSaveInvoice";
-            btnSaveInvoice.Size = new Size(200, 30);
-            btnSaveInvoice.TabIndex = 8;
-            btnSaveInvoice.Text = "Faturayı Kaydet";
-            btnSaveInvoice.UseVisualStyleBackColor = true;
+            btnSaveInvoice.UseVisualStyleBackColor = false;
             btnSaveInvoice.Click += btnSaveInvoice_Click;
             // 
             // btnExportPdf
             // 
-            btnExportPdf = new Button();
-            btnExportPdf.Location = new Point(110, 350);
+            btnExportPdf.BackColor = Color.RoyalBlue;
+            btnExportPdf.FlatAppearance.BorderSize = 0;
+            resources.ApplyResources(btnExportPdf, "btnExportPdf");
+            btnExportPdf.ForeColor = Color.White;
             btnExportPdf.Name = "btnExportPdf";
-            btnExportPdf.Size = new Size(200, 30);
-            btnExportPdf.TabIndex = 9;
-            btnExportPdf.Text = "PDF Olarak Çıkart";
-            btnExportPdf.UseVisualStyleBackColor = true;
+            btnExportPdf.UseVisualStyleBackColor = false;
             btnExportPdf.Click += btnExportPdf_Click;
+            // 
+            // btnMinimize
+            // 
+            resources.ApplyResources(btnMinimize, "btnMinimize");
+            btnMinimize.BackColor = Color.White;
+            btnMinimize.FlatAppearance.BorderSize = 0;
+            btnMinimize.ForeColor = Color.RoyalBlue;
+            btnMinimize.Name = "btnMinimize";
+            btnMinimize.UseVisualStyleBackColor = false;
+            btnMinimize.Click += btnMinimize_Click;
+            btnMinimize.Paint += btnMinimize_Paint;
+            // 
+            // lblSubtotal
+            // 
+            resources.ApplyResources(lblSubtotal, "lblSubtotal");
+            lblSubtotal.ForeColor = Color.RoyalBlue;
+            lblSubtotal.Name = "lblSubtotal";
+            // 
+            // lblVat
+            // 
+            resources.ApplyResources(lblVat, "lblVat");
+            lblVat.ForeColor = Color.RoyalBlue;
+            lblVat.Name = "lblVat";
+            // 
+            // lblTotal
+            // 
+            resources.ApplyResources(lblTotal, "lblTotal");
+            lblTotal.ForeColor = Color.RoyalBlue;
+            lblTotal.Name = "lblTotal";
+            lblTotal.Click += lblTotal_Click;
+            // 
+            // label1
+            // 
+            resources.ApplyResources(label1, "label1");
+            label1.ForeColor = Color.RoyalBlue;
+            label1.Name = "label1";
             // 
             // InvoiceForm
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            resources.ApplyResources(this, "$this");
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(550, 400);
-            Controls.Add(lblTotal);
-            Controls.Add(lblVat);
-            Controls.Add(lblSubtotal);
+            BackColor = Color.WhiteSmoke;
+            Controls.Add(label1);
+            Controls.Add(button1);
             Controls.Add(dataGridView1);
             Controls.Add(btnAddItem);
             Controls.Add(numQuantity);
@@ -185,32 +204,40 @@ namespace FaturaKasaSistemi
             Controls.Add(lblCustomerDetail);
             Controls.Add(btnSaveInvoice);
             Controls.Add(btnExportPdf);
-            FormBorderStyle = FormBorderStyle.FixedDialog;
+            Controls.Add(btnMinimize);
+            Controls.Add(lblSubtotal);
+            Controls.Add(lblVat);
+            Controls.Add(lblTotal);
+            FormBorderStyle = FormBorderStyle.None;
             MaximizeBox = false;
             MinimizeBox = false;
             Name = "InvoiceForm";
-            StartPosition = FormStartPosition.CenterScreen;
-            Text = "Fatura Oluştur";
-            ((System.ComponentModel.ISupportInitialize)numQuantity).EndInit();
+            Load += InvoiceForm_Load;
+            MouseDown += InvoiceForm_MouseDown;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)numQuantity).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
-        private System.Windows.Forms.Label lblProduct;
-        private System.Windows.Forms.ComboBox cmbProducts;
-        private System.Windows.Forms.Label lblQuantity;
-        private System.Windows.Forms.NumericUpDown numQuantity;
-        private System.Windows.Forms.Button btnAddItem;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Label lblSubtotal;
-        private System.Windows.Forms.Label lblVat;
-        private System.Windows.Forms.Label lblTotal;
-        private System.Windows.Forms.Label lblSelectCustomer;
-        private System.Windows.Forms.ComboBox cmbCustomers;
-        private System.Windows.Forms.Label lblCustomerDetail;
-        private System.Windows.Forms.Button btnSaveInvoice;
-        private System.Windows.Forms.Button btnExportPdf;
+
+        private Button button1;
+        private DataGridView dataGridView1;
+        private Button btnAddItem;
+        private NumericUpDown numQuantity;
+        private Label lblQuantity;
+        private ComboBox cmbProducts;
+        private Label lblProduct;
+        private Label lblSelectCustomer;
+        private ComboBox cmbCustomers;
+        private Label lblCustomerDetail;
+        private Button btnSaveInvoice;
+        private Button btnExportPdf;
+        private Button btnMinimize;
+        private Label lblSubtotal;
+        private Label lblVat;
+        private Label lblTotal;
+        private Label label1;
     }
 } 

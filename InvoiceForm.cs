@@ -11,6 +11,7 @@ using iText.Layout.Element;
 using iText.Layout.Properties;
 using iText.Kernel.Font;
 using iText.IO.Font;
+using System.Runtime.InteropServices;
 
 namespace FaturaKasaSistemi
 {
@@ -148,9 +149,9 @@ namespace FaturaKasaSistemi
                 totalVat += lineVat;
             }
             total = subtotal + totalVat;
-            lblSubtotal.Text = $"Ara Toplam: {subtotal:C2}";
-            lblVat.Text = $"KDV: {totalVat:C2}";
-            lblTotal.Text = $"Genel Toplam: {total:C2}";
+            lblSubtotal.Text = $"Ara Toplam: {subtotal:N2} ₺";
+            lblVat.Text = $"KDV: {totalVat:N2} ₺";
+            lblTotal.Text = $"Genel Toplam: {total:N2} ₺";
         }
 
         private string GenerateNextInvoiceNo()
@@ -301,9 +302,9 @@ namespace FaturaKasaSistemi
                             totalVat += lineVat;
                         }
                         total = subtotal + totalVat;
-                        document.Add(new Paragraph($"\nAra Toplam: {subtotal:C2}").SetTextAlignment(TextAlignment.RIGHT).SetFont(font));
-                        document.Add(new Paragraph($"KDV: {totalVat:C2}").SetTextAlignment(TextAlignment.RIGHT).SetFont(font));
-                        document.Add(new Paragraph($"Genel Toplam: {total:C2}").SetTextAlignment(TextAlignment.RIGHT).SetFont(font));
+                        document.Add(new Paragraph($"\nAra Toplam: {subtotal:N2} ₺").SetTextAlignment(TextAlignment.RIGHT).SetFont(font));
+                        document.Add(new Paragraph($"KDV: {totalVat:N2} ₺").SetTextAlignment(TextAlignment.RIGHT).SetFont(font));
+                        document.Add(new Paragraph($"Genel Toplam: {total:N2} ₺").SetTextAlignment(TextAlignment.RIGHT).SetFont(font));
                     }
                 }
                 if (File.Exists(fullPath))
@@ -329,6 +330,39 @@ namespace FaturaKasaSistemi
             }
         }
 
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnMinimize_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void btnMinimize_Paint(object sender, PaintEventArgs e)
+        {
+            var g = e.Graphics;
+            using (var pen = new Pen(System.Drawing.Color.RoyalBlue, 3))
+            {
+                int y = btnMinimize.Height - 10;
+                g.DrawLine(pen, 8, y, btnMinimize.Width - 8, y);
+            }
+        }
+
+        [DllImport("user32.dll")]
+        public static extern bool ReleaseCapture();
+        [DllImport("user32.dll")]
+        public static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
+        private void InvoiceForm_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                ReleaseCapture();
+                SendMessage(this.Handle, 0xA1, 0x2, 0);
+            }
+        }
+
         private class InvoiceItem
         {
             public int ProductId { get; set; }
@@ -337,6 +371,26 @@ namespace FaturaKasaSistemi
             public decimal VatRate { get; set; }
             public int Quantity { get; set; }
             public decimal Toplam => UnitPrice * Quantity * (1 + VatRate / 100);
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void InvoiceForm_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblTotal_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 } 

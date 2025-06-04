@@ -17,130 +17,218 @@ namespace FaturaKasaSistemi
 
         private void InitializeComponent()
         {
-            this.lblName = new System.Windows.Forms.Label();
-            this.txtName = new System.Windows.Forms.TextBox();
-            this.lblPrice = new System.Windows.Forms.Label();
-            this.numPrice = new System.Windows.Forms.NumericUpDown();
-            this.lblVat = new System.Windows.Forms.Label();
-            this.numVat = new System.Windows.Forms.NumericUpDown();
-            this.btnAdd = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.btnDelete = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.numPrice)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numVat)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.SuspendLayout();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            lblName = new Label();
+            txtName = new TextBox();
+            lblPrice = new Label();
+            numPrice = new NumericUpDown();
+            lblVat = new Label();
+            numVat = new NumericUpDown();
+            btnAdd = new Button();
+            dataGridView1 = new DataGridView();
+            btnDelete = new Button();
+            btnClose = new Button();
+            btnMinimize = new Button();
+            label1 = new Label();
+            ((System.ComponentModel.ISupportInitialize)numPrice).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)numVat).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            SuspendLayout();
             // 
             // lblName
             // 
-            this.lblName.AutoSize = true;
-            this.lblName.Location = new System.Drawing.Point(20, 20);
-            this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(61, 15);
-            this.lblName.TabIndex = 0;
-            this.lblName.Text = "Ürün Adı:";
+            lblName.AutoSize = true;
+            lblName.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
+            lblName.ForeColor = Color.RoyalBlue;
+            lblName.Location = new Point(43, 82);
+            lblName.Name = "lblName";
+            lblName.Size = new Size(76, 20);
+            lblName.TabIndex = 0;
+            lblName.Text = "Ürün Adı:";
             // 
             // txtName
             // 
-            this.txtName.Location = new System.Drawing.Point(100, 17);
-            this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(150, 23);
-            this.txtName.TabIndex = 1;
+            txtName.Font = new Font("Segoe UI", 11F);
+            txtName.Location = new Point(125, 79);
+            txtName.Name = "txtName";
+            txtName.Size = new Size(150, 27);
+            txtName.TabIndex = 1;
             // 
             // lblPrice
             // 
-            this.lblPrice.AutoSize = true;
-            this.lblPrice.Location = new System.Drawing.Point(20, 55);
-            this.lblPrice.Name = "lblPrice";
-            this.lblPrice.Size = new System.Drawing.Size(34, 15);
-            this.lblPrice.TabIndex = 2;
-            this.lblPrice.Text = "Fiyat:";
+            lblPrice.AutoSize = true;
+            lblPrice.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
+            lblPrice.ForeColor = Color.RoyalBlue;
+            lblPrice.Location = new Point(43, 114);
+            lblPrice.Name = "lblPrice";
+            lblPrice.Size = new Size(47, 20);
+            lblPrice.TabIndex = 2;
+            lblPrice.Text = "Fiyat:";
             // 
             // numPrice
             // 
-            this.numPrice.DecimalPlaces = 2;
-            this.numPrice.Location = new System.Drawing.Point(100, 53);
-            this.numPrice.Maximum = new decimal(new int[] {1000000, 0, 0, 0});
-            this.numPrice.Name = "numPrice";
-            this.numPrice.Size = new System.Drawing.Size(150, 23);
-            this.numPrice.TabIndex = 3;
+            numPrice.DecimalPlaces = 2;
+            numPrice.Font = new Font("Segoe UI", 11F);
+            numPrice.Location = new Point(125, 112);
+            numPrice.Maximum = new decimal(new int[] { 1000000, 0, 0, 0 });
+            numPrice.Name = "numPrice";
+            numPrice.Size = new Size(150, 27);
+            numPrice.TabIndex = 3;
+            numPrice.TextAlign = HorizontalAlignment.Center;
             // 
             // lblVat
             // 
-            this.lblVat.AutoSize = true;
-            this.lblVat.Location = new System.Drawing.Point(20, 90);
-            this.lblVat.Name = "lblVat";
-            this.lblVat.Size = new System.Drawing.Size(56, 15);
-            this.lblVat.TabIndex = 4;
-            this.lblVat.Text = "KDV (%)";
+            lblVat.AutoSize = true;
+            lblVat.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
+            lblVat.ForeColor = Color.RoyalBlue;
+            lblVat.Location = new Point(43, 147);
+            lblVat.Name = "lblVat";
+            lblVat.Size = new Size(69, 20);
+            lblVat.TabIndex = 4;
+            lblVat.Text = "KDV (%)";
             // 
             // numVat
             // 
-            this.numVat.DecimalPlaces = 2;
-            this.numVat.Location = new System.Drawing.Point(100, 88);
-            this.numVat.Maximum = new decimal(new int[] {100, 0, 0, 0});
-            this.numVat.Name = "numVat";
-            this.numVat.Size = new System.Drawing.Size(150, 23);
-            this.numVat.TabIndex = 5;
+            numVat.DecimalPlaces = 2;
+            numVat.Font = new Font("Segoe UI", 11F);
+            numVat.Location = new Point(125, 145);
+            numVat.Name = "numVat";
+            numVat.Size = new Size(150, 27);
+            numVat.TabIndex = 5;
+            numVat.TextAlign = HorizontalAlignment.Center;
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(100, 125);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(150, 30);
-            this.btnAdd.TabIndex = 6;
-            this.btnAdd.Text = "Ürün Ekle";
-            this.btnAdd.UseVisualStyleBackColor = true;
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            btnAdd.BackColor = Color.RoyalBlue;
+            btnAdd.FlatAppearance.BorderSize = 0;
+            btnAdd.FlatStyle = FlatStyle.Flat;
+            btnAdd.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
+            btnAdd.ForeColor = Color.White;
+            btnAdd.Location = new Point(125, 181);
+            btnAdd.Name = "btnAdd";
+            btnAdd.Size = new Size(150, 40);
+            btnAdd.TabIndex = 6;
+            btnAdd.Text = "Ürün Ekle";
+            btnAdd.UseVisualStyleBackColor = false;
+            btnAdd.Click += btnAdd_Click;
             // 
             // dataGridView1
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(20, 170);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 25;
-            this.dataGridView1.Size = new System.Drawing.Size(350, 200);
-            this.dataGridView1.TabIndex = 7;
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.MultiSelect = false;
+            dataGridView1.BackgroundColor = Color.White;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = Color.RoyalBlue;
+            dataGridViewCellStyle1.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            dataGridViewCellStyle1.ForeColor = Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = Color.WhiteSmoke;
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 10F);
+            dataGridViewCellStyle2.ForeColor = Color.Black;
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
+            dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridView1.EnableHeadersVisualStyles = false;
+            dataGridView1.Location = new Point(24, 227);
+            dataGridView1.MultiSelect = false;
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.ReadOnly = true;
+            dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dataGridView1.Size = new Size(350, 200);
+            dataGridView1.TabIndex = 7;
             // 
             // btnDelete
             // 
-            this.btnDelete = new System.Windows.Forms.Button();
-            this.btnDelete.Location = new System.Drawing.Point(20, 380);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(120, 30);
-            this.btnDelete.TabIndex = 8;
-            this.btnDelete.Text = "Seçili Ürünü Sil";
-            this.btnDelete.UseVisualStyleBackColor = true;
-            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            btnDelete.BackColor = Color.RoyalBlue;
+            btnDelete.FlatAppearance.BorderSize = 0;
+            btnDelete.FlatStyle = FlatStyle.Flat;
+            btnDelete.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
+            btnDelete.ForeColor = Color.White;
+            btnDelete.Location = new Point(125, 433);
+            btnDelete.Name = "btnDelete";
+            btnDelete.Size = new Size(150, 40);
+            btnDelete.TabIndex = 8;
+            btnDelete.Text = "Seçili Ürünü Sil";
+            btnDelete.UseVisualStyleBackColor = false;
+            btnDelete.Click += btnDelete_Click;
+            // 
+            // btnClose
+            // 
+            btnClose.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btnClose.BackColor = Color.White;
+            btnClose.FlatAppearance.BorderSize = 0;
+            btnClose.FlatStyle = FlatStyle.Flat;
+            btnClose.Font = new Font("Segoe UI", 14F, FontStyle.Bold);
+            btnClose.ForeColor = Color.RoyalBlue;
+            btnClose.Location = new Point(360, 10);
+            btnClose.Name = "btnClose";
+            btnClose.Size = new Size(30, 30);
+            btnClose.TabIndex = 9;
+            btnClose.Text = "X";
+            btnClose.UseVisualStyleBackColor = false;
+            btnClose.Click += btnClose_Click;
+            // 
+            // btnMinimize
+            // 
+            btnMinimize.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btnMinimize.BackColor = Color.White;
+            btnMinimize.FlatAppearance.BorderSize = 0;
+            btnMinimize.FlatStyle = FlatStyle.Flat;
+            btnMinimize.Font = new Font("Segoe UI", 16F, FontStyle.Bold);
+            btnMinimize.ForeColor = Color.RoyalBlue;
+            btnMinimize.Location = new Point(320, 10);
+            btnMinimize.Name = "btnMinimize";
+            btnMinimize.Size = new Size(30, 30);
+            btnMinimize.TabIndex = 10;
+            btnMinimize.UseVisualStyleBackColor = false;
+            btnMinimize.Click += btnMinimize_Click;
+            btnMinimize.Paint += btnMinimize_Paint;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
+            label1.ForeColor = Color.RoyalBlue;
+            label1.Location = new Point(125, 17);
+            label1.Name = "label1";
+            label1.Size = new Size(160, 20);
+            label1.TabIndex = 11;
+            label1.Text = "Ürün Kontrol Merkezi";
             // 
             // ProductForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(400, 460);
-            this.Controls.Add(this.btnDelete);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.btnAdd);
-            this.Controls.Add(this.numVat);
-            this.Controls.Add(this.lblVat);
-            this.Controls.Add(this.numPrice);
-            this.Controls.Add(this.lblPrice);
-            this.Controls.Add(this.txtName);
-            this.Controls.Add(this.lblName);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
-            this.Name = "ProductForm";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Ürün Tanımlama";
-            ((System.ComponentModel.ISupportInitialize)(this.numPrice)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numVat)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            this.ResumeLayout(false);
-            this.PerformLayout();
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.WhiteSmoke;
+            ClientSize = new Size(400, 500);
+            Controls.Add(label1);
+            Controls.Add(btnDelete);
+            Controls.Add(dataGridView1);
+            Controls.Add(btnAdd);
+            Controls.Add(numVat);
+            Controls.Add(lblVat);
+            Controls.Add(numPrice);
+            Controls.Add(lblPrice);
+            Controls.Add(txtName);
+            Controls.Add(lblName);
+            Controls.Add(btnClose);
+            Controls.Add(btnMinimize);
+            FormBorderStyle = FormBorderStyle.None;
+            MaximizeBox = false;
+            MinimizeBox = false;
+            Name = "ProductForm";
+            Text = "Ürün Tanımlama";
+            MouseDown += ProductForm_MouseDown;
+            ((System.ComponentModel.ISupportInitialize)numPrice).EndInit();
+            ((System.ComponentModel.ISupportInitialize)numVat).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -154,5 +242,8 @@ namespace FaturaKasaSistemi
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button btnDelete;
+        private System.Windows.Forms.Button btnClose;
+        private System.Windows.Forms.Button btnMinimize;
+        private Label label1;
     }
 } 

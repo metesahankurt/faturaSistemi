@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("FaturaKasaSistemi")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a6d6ff240a1edcae606378a683c1e0bc27fedc8e")]
 [assembly: System.Reflection.AssemblyProductAttribute("FaturaKasaSistemi")]
 [assembly: System.Reflection.AssemblyTitleAttribute("FaturaKasaSistemi")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

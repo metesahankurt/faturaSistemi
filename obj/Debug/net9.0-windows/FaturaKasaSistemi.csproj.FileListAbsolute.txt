@@ -1,9 +1,14 @@
 C:\repos\FinalProjesi\FaturaKasaSistemi\obj\Debug\net9.0-windows\FaturaKasaSistemi.csproj.AssemblyReference.cache
 C:\repos\FinalProjesi\FaturaKasaSistemi\obj\Debug\net9.0-windows\FaturaKasaSistemi.CustomerForm.resources
+C:\repos\FinalProjesi\FaturaKasaSistemi\obj\Debug\net9.0-windows\FaturaKasaSistemi.CustomerListForm.resources
 C:\repos\FinalProjesi\FaturaKasaSistemi\obj\Debug\net9.0-windows\FaturaKasaSistemi.Form1.resources
+C:\repos\FinalProjesi\FaturaKasaSistemi\obj\Debug\net9.0-windows\FaturaKasaSistemi.InvoiceDetailForm.resources
 C:\repos\FinalProjesi\FaturaKasaSistemi\obj\Debug\net9.0-windows\FaturaKasaSistemi.InvoiceForm.resources
+C:\repos\FinalProjesi\FaturaKasaSistemi\obj\Debug\net9.0-windows\FaturaKasaSistemi.InvoiceSearchForm.resources
+C:\repos\FinalProjesi\FaturaKasaSistemi\obj\Debug\net9.0-windows\FaturaKasaSistemi.KasaRaporuForm.resources
 C:\repos\FinalProjesi\FaturaKasaSistemi\obj\Debug\net9.0-windows\FaturaKasaSistemi.LoginForm.resources
 C:\repos\FinalProjesi\FaturaKasaSistemi\obj\Debug\net9.0-windows\FaturaKasaSistemi.ProductForm.resources
+C:\repos\FinalProjesi\FaturaKasaSistemi\obj\Debug\net9.0-windows\FaturaKasaSistemi.Properties.Resources.resources
 C:\repos\FinalProjesi\FaturaKasaSistemi\obj\Debug\net9.0-windows\FaturaKasaSistemi.csproj.GenerateResource.cache
 C:\repos\FinalProjesi\FaturaKasaSistemi\obj\Debug\net9.0-windows\FaturaKasaSistemi.GeneratedMSBuildEditorConfig.editorconfig
 C:\repos\FinalProjesi\FaturaKasaSistemi\obj\Debug\net9.0-windows\FaturaKasaSistemi.AssemblyInfoInputs.cache
@@ -55,5 +60,3 @@ C:\repos\FinalProjesi\FaturaKasaSistemi\obj\Debug\net9.0-windows\refint\FaturaKa
 C:\repos\FinalProjesi\FaturaKasaSistemi\obj\Debug\net9.0-windows\FaturaKasaSistemi.pdb
 C:\repos\FinalProjesi\FaturaKasaSistemi\obj\Debug\net9.0-windows\FaturaKasaSistemi.genruntimeconfig.cache
 C:\repos\FinalProjesi\FaturaKasaSistemi\obj\Debug\net9.0-windows\ref\FaturaKasaSistemi.dll
-C:\repos\FinalProjesi\FaturaKasaSistemi\obj\Debug\net9.0-windows\FaturaKasaSistemi.InvoiceSearchForm.resources
-C:\repos\FinalProjesi\FaturaKasaSistemi\obj\Debug\net9.0-windows\FaturaKasaSistemi.InvoiceDetailForm.resources
