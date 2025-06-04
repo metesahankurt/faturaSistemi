@@ -52,6 +52,8 @@ partial class Form1
     /// </summary>
     private void InitializeComponent()
     {
+        components = new System.ComponentModel.Container();
+        System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
         btnProductForm = new Button();
         btnInvoiceForm = new Button();
         btnCustomerForm = new Button();
@@ -78,7 +80,7 @@ partial class Form1
         btnClose = new Button();
         btnMinimize = new Button();
         pnlLeft = new Panel();
-        clockTimer = new System.Windows.Forms.Timer();
+        clockTimer = new System.Windows.Forms.Timer(components);
         pnlRight.SuspendLayout();
         pnlCounterMusteri.SuspendLayout();
         pnlCounterUrun.SuspendLayout();
@@ -380,9 +382,9 @@ partial class Form1
         // 
         // clockTimer
         // 
+        clockTimer.Enabled = true;
         clockTimer.Interval = 1000;
-        clockTimer.Tick += new System.EventHandler(this.clockTimer_Tick);
-        clockTimer.Start();
+        clockTimer.Tick += clockTimer_Tick;
         // 
         // Form1
         // 
@@ -394,6 +396,7 @@ partial class Form1
         Controls.Add(btnClose);
         Controls.Add(btnMinimize);
         FormBorderStyle = FormBorderStyle.None;
+        Icon = (Icon)resources.GetObject("$this.Icon");
         Name = "Form1";
         StartPosition = FormStartPosition.CenterScreen;
         Text = "Dashboard";

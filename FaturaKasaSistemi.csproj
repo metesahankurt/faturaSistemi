@@ -2,11 +2,43 @@
 
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
-    <TargetFramework>net9.0-windows</TargetFramework>
+    <TargetFramework>net9.0-windows7.0</TargetFramework>
     <Nullable>enable</Nullable>
     <UseWindowsForms>true</UseWindowsForms>
     <ImplicitUsings>enable</ImplicitUsings>
+    <StartupObject>FaturaKasaSistemi.Program</StartupObject>
+    <PublishSingleFile>true</PublishSingleFile>
+    <SelfContained>true</SelfContained>
+    <RuntimeIdentifier>win-x64</RuntimeIdentifier>
+    <PublishReadyToRun>true</PublishReadyToRun>
+    <IncludeNativeLibrariesForSelfExtract>true</IncludeNativeLibrariesForSelfExtract>
+    <PackageOutputPath></PackageOutputPath>
+    <NeutralLanguage>tr</NeutralLanguage>
+    <BaseOutputPath>C:\Users\weetz\OneDrive\Desktop\New folder (2)</BaseOutputPath>
+    <Company>$(Weetz Studios)</Company>
+    <Title>Fatura Kasa Sistemi</Title>
+    <Copyright>2025</Copyright>
+    <PackageProjectUrl>https://github.com/metesahankurt/faturaSistemi</PackageProjectUrl>
+    <PackageIcon>icon-192-maskable.png</PackageIcon>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <RepositoryUrl>https://github.com/metesahankurt/faturaSistemi</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageTags>Finance</PackageTags>
+    <ErrorReport>prompt</ErrorReport>
+    <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
+    <ApplicationIcon>favicon.ico</ApplicationIcon>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Content Include="favicon.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="itext7" Version="9.2.0" />
@@ -28,6 +60,15 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="turkiye_il.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="turkiye_ilce.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
 </Project>

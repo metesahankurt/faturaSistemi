@@ -17,6 +17,7 @@ namespace FaturaKasaSistemi
 
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CustomerForm));
             txtFirstName = new TextBox();
             txtLastName = new TextBox();
             cmbIl = new ComboBox();
@@ -226,6 +227,7 @@ namespace FaturaKasaSistemi
             Controls.Add(btnClose);
             Controls.Add(btnMinimize);
             FormBorderStyle = FormBorderStyle.None;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Margin = new Padding(4, 3, 4, 3);
             MaximizeBox = false;
             MinimizeBox = false;

@@ -19,6 +19,7 @@ namespace FaturaKasaSistemi
         {
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ProductForm));
             lblName = new Label();
             txtName = new TextBox();
             lblPrice = new Label();
@@ -219,6 +220,7 @@ namespace FaturaKasaSistemi
             Controls.Add(btnClose);
             Controls.Add(btnMinimize);
             FormBorderStyle = FormBorderStyle.None;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             MaximizeBox = false;
             MinimizeBox = false;
             Name = "ProductForm";

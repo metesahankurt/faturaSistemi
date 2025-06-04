@@ -23,141 +23,160 @@ namespace FaturaKasaSistemi
 
         private void InitializeComponent()
         {
-            this.lblTarih = new System.Windows.Forms.Label();
-            this.dtpTarih = new System.Windows.Forms.DateTimePicker();
-            this.lblToplamSatis = new System.Windows.Forms.Label();
-            this.lblToplamKDV = new System.Windows.Forms.Label();
-            this.lblGenelToplam = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.btnClose = new System.Windows.Forms.Button();
-            this.btnMinimize = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.SuspendLayout();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(KasaRaporuForm));
+            lblTarih = new Label();
+            dtpTarih = new DateTimePicker();
+            lblToplamSatis = new Label();
+            lblToplamKDV = new Label();
+            lblGenelToplam = new Label();
+            dataGridView1 = new DataGridView();
+            btnClose = new Button();
+            btnMinimize = new Button();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            SuspendLayout();
             // 
             // lblTarih
             // 
-            this.lblTarih.AutoSize = true;
-            this.lblTarih.Location = new System.Drawing.Point(20, 20);
-            this.lblTarih.Name = "lblTarih";
-            this.lblTarih.Size = new System.Drawing.Size(37, 15);
-            this.lblTarih.TabIndex = 0;
-            this.lblTarih.Text = "Tarih:";
-            this.lblTarih.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
-            this.lblTarih.ForeColor = System.Drawing.Color.RoyalBlue;
+            lblTarih.AutoSize = true;
+            lblTarih.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
+            lblTarih.ForeColor = Color.RoyalBlue;
+            lblTarih.Location = new Point(20, 20);
+            lblTarih.Name = "lblTarih";
+            lblTarih.Size = new Size(48, 20);
+            lblTarih.TabIndex = 0;
+            lblTarih.Text = "Tarih:";
             // 
             // dtpTarih
             // 
-            this.dtpTarih.Location = new System.Drawing.Point(70, 15);
-            this.dtpTarih.Name = "dtpTarih";
-            this.dtpTarih.Size = new System.Drawing.Size(200, 23);
-            this.dtpTarih.TabIndex = 1;
-            this.dtpTarih.ValueChanged += new System.EventHandler(this.dtpTarih_ValueChanged);
-            this.dtpTarih.Font = new System.Drawing.Font("Segoe UI", 11F);
+            dtpTarih.Font = new Font("Segoe UI", 11F);
+            dtpTarih.Location = new Point(70, 15);
+            dtpTarih.Name = "dtpTarih";
+            dtpTarih.Size = new Size(200, 27);
+            dtpTarih.TabIndex = 1;
+            dtpTarih.ValueChanged += dtpTarih_ValueChanged;
             // 
             // lblToplamSatis
             // 
-            this.lblToplamSatis.AutoSize = true;
-            this.lblToplamSatis.Location = new System.Drawing.Point(20, 55);
-            this.lblToplamSatis.Name = "lblToplamSatis";
-            this.lblToplamSatis.Size = new System.Drawing.Size(90, 15);
-            this.lblToplamSatis.TabIndex = 2;
-            this.lblToplamSatis.Text = "Toplam Satış: 0";
-            this.lblToplamSatis.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
-            this.lblToplamSatis.ForeColor = System.Drawing.Color.RoyalBlue;
+            lblToplamSatis.AutoSize = true;
+            lblToplamSatis.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
+            lblToplamSatis.ForeColor = Color.RoyalBlue;
+            lblToplamSatis.Location = new Point(20, 55);
+            lblToplamSatis.Name = "lblToplamSatis";
+            lblToplamSatis.Size = new Size(115, 20);
+            lblToplamSatis.TabIndex = 2;
+            lblToplamSatis.Text = "Toplam Satış: 0";
             // 
             // lblToplamKDV
             // 
-            this.lblToplamKDV.AutoSize = true;
-            this.lblToplamKDV.Location = new System.Drawing.Point(180, 55);
-            this.lblToplamKDV.Name = "lblToplamKDV";
-            this.lblToplamKDV.Size = new System.Drawing.Size(85, 15);
-            this.lblToplamKDV.TabIndex = 3;
-            this.lblToplamKDV.Text = "Toplam KDV: 0";
-            this.lblToplamKDV.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
-            this.lblToplamKDV.ForeColor = System.Drawing.Color.RoyalBlue;
+            lblToplamKDV.AutoSize = true;
+            lblToplamKDV.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
+            lblToplamKDV.ForeColor = Color.RoyalBlue;
+            lblToplamKDV.Location = new Point(180, 55);
+            lblToplamKDV.Name = "lblToplamKDV";
+            lblToplamKDV.Size = new Size(113, 20);
+            lblToplamKDV.TabIndex = 3;
+            lblToplamKDV.Text = "Toplam KDV: 0";
             // 
             // lblGenelToplam
             // 
-            this.lblGenelToplam.AutoSize = true;
-            this.lblGenelToplam.Location = new System.Drawing.Point(340, 55);
-            this.lblGenelToplam.Name = "lblGenelToplam";
-            this.lblGenelToplam.Size = new System.Drawing.Size(97, 15);
-            this.lblGenelToplam.TabIndex = 4;
-            this.lblGenelToplam.Text = "Genel Toplam: 0";
-            this.lblGenelToplam.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
-            this.lblGenelToplam.ForeColor = System.Drawing.Color.RoyalBlue;
+            lblGenelToplam.AutoSize = true;
+            lblGenelToplam.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
+            lblGenelToplam.ForeColor = Color.RoyalBlue;
+            lblGenelToplam.Location = new Point(340, 55);
+            lblGenelToplam.Name = "lblGenelToplam";
+            lblGenelToplam.Size = new Size(122, 20);
+            lblGenelToplam.TabIndex = 4;
+            lblGenelToplam.Text = "Genel Toplam: 0";
             // 
             // dataGridView1
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(20, 90);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(500, 250);
-            this.dataGridView1.TabIndex = 5;
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.MultiSelect = false;
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
-            this.dataGridView1.EnableHeadersVisualStyles = false;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle.BackColor = System.Drawing.Color.RoyalBlue;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle.ForeColor = System.Drawing.Color.White;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
-            this.dataGridView1.DefaultCellStyle.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.dataGridView1.DefaultCellStyle.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.dataGridView1.DefaultCellStyle.ForeColor = System.Drawing.Color.Black;
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridView1.BackgroundColor = Color.White;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = Color.RoyalBlue;
+            dataGridViewCellStyle1.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            dataGridViewCellStyle1.ForeColor = Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = Color.WhiteSmoke;
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 10F);
+            dataGridViewCellStyle2.ForeColor = Color.Black;
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
+            dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridView1.EnableHeadersVisualStyles = false;
+            dataGridView1.Location = new Point(20, 90);
+            dataGridView1.MultiSelect = false;
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.ReadOnly = true;
+            dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dataGridView1.Size = new Size(500, 250);
+            dataGridView1.TabIndex = 5;
             // 
             // btnClose
             // 
-            this.btnClose.Location = new System.Drawing.Point(510, 10);
-            this.btnClose.Size = new System.Drawing.Size(30, 30);
-            this.btnClose.Anchor = (System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right);
-            this.btnClose.Text = "X";
-            this.btnClose.BackColor = System.Drawing.Color.White;
-            this.btnClose.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClose.FlatAppearance.BorderSize = 0;
-            this.btnClose.Font = new System.Drawing.Font("Segoe UI", 14, System.Drawing.FontStyle.Bold);
-            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            btnClose.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btnClose.BackColor = Color.White;
+            btnClose.FlatAppearance.BorderSize = 0;
+            btnClose.FlatStyle = FlatStyle.Flat;
+            btnClose.Font = new Font("Segoe UI", 14F, FontStyle.Bold);
+            btnClose.ForeColor = Color.RoyalBlue;
+            btnClose.Location = new Point(510, 10);
+            btnClose.Name = "btnClose";
+            btnClose.Size = new Size(30, 30);
+            btnClose.TabIndex = 6;
+            btnClose.Text = "X";
+            btnClose.UseVisualStyleBackColor = false;
+            btnClose.Click += btnClose_Click;
             // 
             // btnMinimize
             // 
-            this.btnMinimize.Location = new System.Drawing.Point(470, 10);
-            this.btnMinimize.Size = new System.Drawing.Size(30, 30);
-            this.btnMinimize.Anchor = (System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right);
-            this.btnMinimize.Text = "";
-            this.btnMinimize.BackColor = System.Drawing.Color.White;
-            this.btnMinimize.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.btnMinimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMinimize.FlatAppearance.BorderSize = 0;
-            this.btnMinimize.Font = new System.Drawing.Font("Segoe UI", 16, System.Drawing.FontStyle.Bold);
-            this.btnMinimize.Click += new System.EventHandler(this.btnMinimize_Click);
-            this.btnMinimize.Paint += new System.Windows.Forms.PaintEventHandler(this.btnMinimize_Paint);
+            btnMinimize.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btnMinimize.BackColor = Color.White;
+            btnMinimize.FlatAppearance.BorderSize = 0;
+            btnMinimize.FlatStyle = FlatStyle.Flat;
+            btnMinimize.Font = new Font("Segoe UI", 16F, FontStyle.Bold);
+            btnMinimize.ForeColor = Color.RoyalBlue;
+            btnMinimize.Location = new Point(470, 10);
+            btnMinimize.Name = "btnMinimize";
+            btnMinimize.Size = new Size(30, 30);
+            btnMinimize.TabIndex = 7;
+            btnMinimize.UseVisualStyleBackColor = false;
+            btnMinimize.Click += btnMinimize_Click;
+            btnMinimize.Paint += btnMinimize_Paint;
             // 
             // KasaRaporuForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(550, 370);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.lblGenelToplam);
-            this.Controls.Add(this.lblToplamKDV);
-            this.Controls.Add(this.lblToplamSatis);
-            this.Controls.Add(this.dtpTarih);
-            this.Controls.Add(this.lblTarih);
-            this.Controls.Add(this.btnClose);
-            this.Controls.Add(this.btnMinimize);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
-            this.Name = "KasaRaporuForm";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Kasa Raporu";
-            this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.KasaRaporuForm_MouseDown);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            this.ResumeLayout(false);
-            this.PerformLayout();
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.WhiteSmoke;
+            ClientSize = new Size(550, 370);
+            Controls.Add(dataGridView1);
+            Controls.Add(lblGenelToplam);
+            Controls.Add(lblToplamKDV);
+            Controls.Add(lblToplamSatis);
+            Controls.Add(dtpTarih);
+            Controls.Add(lblTarih);
+            Controls.Add(btnClose);
+            Controls.Add(btnMinimize);
+            FormBorderStyle = FormBorderStyle.None;
+            Icon = (Icon)resources.GetObject("$this.Icon");
+            MaximizeBox = false;
+            MinimizeBox = false;
+            Name = "KasaRaporuForm";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "Kasa Raporu";
+            MouseDown += KasaRaporuForm_MouseDown;
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ResumeLayout(false);
+            PerformLayout();
         }
     }
 } 

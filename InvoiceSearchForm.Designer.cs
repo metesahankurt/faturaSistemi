@@ -31,6 +31,7 @@ namespace FaturaKasaSistemi
         {
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(InvoiceSearchForm));
             pnlSearch = new Panel();
             lblCustomerName = new Label();
             txtCustomerName = new TextBox();
@@ -273,6 +274,7 @@ namespace FaturaKasaSistemi
             Controls.Add(pnlSearch);
             Controls.Add(btnExportPdf);
             FormBorderStyle = FormBorderStyle.None;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "InvoiceSearchForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Fatura Arama";

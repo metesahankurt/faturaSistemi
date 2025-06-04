@@ -21,6 +21,7 @@ namespace FaturaKasaSistemi
         {
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CustomerListForm));
             dataGridView1 = new DataGridView();
             btnDelete = new Button();
             btnClose = new Button();
@@ -127,6 +128,7 @@ namespace FaturaKasaSistemi
             Controls.Add(btnClose);
             Controls.Add(btnMinimize);
             FormBorderStyle = FormBorderStyle.None;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "CustomerListForm";
             Text = "Müşteriler";
             Load += CustomerListForm_Load;

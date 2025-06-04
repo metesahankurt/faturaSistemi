@@ -6,11 +6,13 @@ using System.IO;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System.Runtime.InteropServices;
+using System.Linq;
 
 namespace FaturaKasaSistemi
 {
     public partial class CustomerForm : Form
     {
+        private List<IlceModel> ilceList = new List<IlceModel>();
         private Dictionary<string, List<string>> ilIlceDict = new Dictionary<string, List<string>>();
 
         public CustomerForm()
@@ -53,7 +55,15 @@ namespace FaturaKasaSistemi
                 string basePath = AppDomain.CurrentDomain.BaseDirectory;
                 string ilceJsonPath = Path.Combine(basePath, "turkiye_ilce.json");
                 string ilceJson = File.ReadAllText(ilceJsonPath);
-                ilIlceDict = JsonConvert.DeserializeObject<Dictionary<string, List<string>>>(ilceJson);
+                ilceList = JsonConvert.DeserializeObject<List<IlceModel>>(ilceJson);
+                ilIlceDict = new Dictionary<string, List<string>>();
+                foreach (var ilce in ilceList)
+                {
+                    string sehirKey = ilce.ilce_sehirkey;
+                    if (!ilIlceDict.ContainsKey(sehirKey))
+                        ilIlceDict[sehirKey] = new List<string>();
+                    ilIlceDict[sehirKey].Add(ilce.ilce_title);
+                }
             }
             catch (Exception ex)
             {
@@ -82,12 +92,21 @@ namespace FaturaKasaSistemi
             cmbIlce.Items.Clear();
             if (cmbIl.SelectedItem != null && ilIlceDict != null)
             {
-                string seciliIl = cmbIl.SelectedItem.ToString();
-                if (ilIlceDict.ContainsKey(seciliIl))
+                string seciliIlAd = cmbIl.SelectedItem.ToString();
+                var seciliIl = (from il in LoadIllerList() where il.sehir_title == seciliIlAd select il).FirstOrDefault();
+                if (seciliIl != null && ilIlceDict.ContainsKey(seciliIl.sehir_key))
                 {
-                    cmbIlce.Items.AddRange(ilIlceDict[seciliIl].ToArray());
+                    cmbIlce.Items.AddRange(ilIlceDict[seciliIl.sehir_key].ToArray());
                 }
             }
+        }
+
+        private List<IlModel> LoadIllerList()
+        {
+            string basePath = AppDomain.CurrentDomain.BaseDirectory;
+            string ilJsonPath = Path.Combine(basePath, "turkiye_il.json");
+            string ilJson = File.ReadAllText(ilJsonPath);
+            return JsonConvert.DeserializeObject<List<IlModel>>(ilJson);
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -174,6 +193,12 @@ namespace FaturaKasaSistemi
         {
             public string sehir_key { get; set; }
             public string sehir_title { get; set; }
+        }
+        public class IlceModel
+        {
+            public string ilce_key { get; set; }
+            public string ilce_title { get; set; }
+            public string ilce_sehirkey { get; set; }
         }
     }
 } 
