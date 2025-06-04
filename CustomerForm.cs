@@ -18,6 +18,7 @@ namespace FaturaKasaSistemi
             this.StartPosition = FormStartPosition.CenterScreen;
             LoadIlIlceData();
             LoadIller();
+            cmbIl.SelectedIndexChanged += cmbIl_SelectedIndexChanged;
         }
 
         private void LoadIlIlceData()
@@ -27,6 +28,7 @@ namespace FaturaKasaSistemi
                 string basePath = AppDomain.CurrentDomain.BaseDirectory;
                 string ilceJsonPath = Path.Combine(basePath, "turkiye_ilce.json");
                 string ilceJson = File.ReadAllText(ilceJsonPath);
+                ilIlceDict = JsonConvert.DeserializeObject<Dictionary<string, List<string>>>(ilceJson);
             }
             catch (Exception ex)
             {
@@ -40,6 +42,9 @@ namespace FaturaKasaSistemi
             {
                 string basePath = AppDomain.CurrentDomain.BaseDirectory;
                 string ilJsonPath = Path.Combine(basePath, "turkiye_il.json");
+                string ilJson = File.ReadAllText(ilJsonPath);
+                var iller = JsonConvert.DeserializeObject<List<IlModel>>(ilJson);
+                cmbIl.DataSource = iller.Select(x => x.sehir_title).ToList();
             }
             catch (Exception ex)
             {
@@ -50,6 +55,14 @@ namespace FaturaKasaSistemi
         private void cmbIl_SelectedIndexChanged(object sender, EventArgs e)
         {
             cmbIlce.Items.Clear();
+            if (cmbIl.SelectedItem != null && ilIlceDict != null)
+            {
+                string seciliIl = cmbIl.SelectedItem.ToString();
+                if (ilIlceDict.ContainsKey(seciliIl))
+                {
+                    cmbIlce.Items.AddRange(ilIlceDict[seciliIl].ToArray());
+                }
+            }
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -87,6 +100,12 @@ namespace FaturaKasaSistemi
                     MessageBox.Show("Veritabanı hatası: " + ex.Message, "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
+        }
+
+        public class IlModel
+        {
+            public string sehir_key { get; set; }
+            public string sehir_title { get; set; }
         }
     }
 } 
