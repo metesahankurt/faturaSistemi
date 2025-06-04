@@ -55,3 +55,5 @@ C:\repos\FinalProjesi\FaturaKasaSistemi\obj\Debug\net9.0-windows\refint\FaturaKa
 C:\repos\FinalProjesi\FaturaKasaSistemi\obj\Debug\net9.0-windows\FaturaKasaSistemi.pdb
 C:\repos\FinalProjesi\FaturaKasaSistemi\obj\Debug\net9.0-windows\FaturaKasaSistemi.genruntimeconfig.cache
 C:\repos\FinalProjesi\FaturaKasaSistemi\obj\Debug\net9.0-windows\ref\FaturaKasaSistemi.dll
+C:\repos\FinalProjesi\FaturaKasaSistemi\obj\Debug\net9.0-windows\FaturaKasaSistemi.InvoiceSearchForm.resources
+C:\repos\FinalProjesi\FaturaKasaSistemi\obj\Debug\net9.0-windows\FaturaKasaSistemi.InvoiceDetailForm.resources

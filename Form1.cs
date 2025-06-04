@@ -30,4 +30,10 @@ public partial class Form1 : Form
         KasaRaporuForm kasaRaporuForm = new KasaRaporuForm();
         kasaRaporuForm.ShowDialog();
     }
+
+    private void btnInvoiceSearch_Click(object sender, EventArgs e)
+    {
+        InvoiceSearchForm searchForm = new InvoiceSearchForm();
+        searchForm.ShowDialog();
+    }
 }

@@ -11,6 +11,7 @@ partial class Form1
     private System.Windows.Forms.Button btnInvoiceForm;
     private System.Windows.Forms.Button btnCustomerForm;
     private System.Windows.Forms.Button btnKasaRaporu;
+    private System.Windows.Forms.Button btnInvoiceSearch;
 
     /// <summary>
     ///  Clean up any resources being used.
@@ -37,6 +38,7 @@ partial class Form1
         btnInvoiceForm = new Button();
         btnCustomerForm = new Button();
         btnKasaRaporu = new Button();
+        btnInvoiceSearch = new Button();
         SuspendLayout();
         // 
         // btnProductForm
@@ -71,13 +73,23 @@ partial class Form1
         // 
         // btnKasaRaporu
         // 
-        btnKasaRaporu.Location = new Point(30, 210);
+        btnKasaRaporu.Location = new Point(30, 270);
         btnKasaRaporu.Name = "btnKasaRaporu";
         btnKasaRaporu.Size = new Size(150, 40);
         btnKasaRaporu.TabIndex = 3;
         btnKasaRaporu.Text = "Kasa Raporu";
         btnKasaRaporu.UseVisualStyleBackColor = true;
         btnKasaRaporu.Click += btnKasaRaporu_Click;
+        // 
+        // btnInvoiceSearch
+        // 
+        btnInvoiceSearch.Location = new Point(30, 210);
+        btnInvoiceSearch.Name = "btnInvoiceSearch";
+        btnInvoiceSearch.Size = new Size(150, 40);
+        btnInvoiceSearch.TabIndex = 4;
+        btnInvoiceSearch.Text = "Fatura Ara/Listele";
+        btnInvoiceSearch.UseVisualStyleBackColor = true;
+        btnInvoiceSearch.Click += btnInvoiceSearch_Click;
         // 
         // Form1
         // 
@@ -88,6 +100,7 @@ partial class Form1
         Controls.Add(btnInvoiceForm);
         Controls.Add(btnCustomerForm);
         Controls.Add(btnKasaRaporu);
+        Controls.Add(btnInvoiceSearch);
         Name = "Form1";
         StartPosition = FormStartPosition.CenterScreen;
         Text = "Dashboard";

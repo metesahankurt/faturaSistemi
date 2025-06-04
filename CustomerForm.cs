@@ -74,22 +74,32 @@ namespace FaturaKasaSistemi
                 return;
             }
 
+            Customer yeniMusteri = new Customer
+            {
+                FirstName = txtFirstName.Text,
+                LastName = txtLastName.Text,
+                City = cmbIl.SelectedItem.ToString(),
+                District = cmbIlce.SelectedItem.ToString(),
+                Address = txtAddress.Text,
+                CreatedAt = DateTime.Now
+            };
+
             string connectionString = "server=localhost;database=faturakasa;user=root;password=199419033Mm.;";
             using (MySqlConnection conn = new MySqlConnection(connectionString))
             {
                 try
                 {
                     conn.Open();
-                    string query = @"INSERT INTO customers (first_name, last_name, card_number, card_type, 
-                                   city, district, address_line) 
-                                   VALUES (@first, @last, '', '', @city, @district, @address)";
+                    string query = @"INSERT INTO customers (first_name, last_name, card_number, card_type, city, district, address_line, created_at) 
+                               VALUES (@first, @last, '', '', @city, @district, @address, @created_at)";
                     using (MySqlCommand cmd = new MySqlCommand(query, conn))
                     {
-                        cmd.Parameters.AddWithValue("@first", txtFirstName.Text);
-                        cmd.Parameters.AddWithValue("@last", txtLastName.Text);
-                        cmd.Parameters.AddWithValue("@city", cmbIl.SelectedItem.ToString());
-                        cmd.Parameters.AddWithValue("@district", cmbIlce.SelectedItem.ToString());
-                        cmd.Parameters.AddWithValue("@address", txtAddress.Text);
+                        cmd.Parameters.AddWithValue("@first", yeniMusteri.FirstName);
+                        cmd.Parameters.AddWithValue("@last", yeniMusteri.LastName);
+                        cmd.Parameters.AddWithValue("@city", yeniMusteri.City);
+                        cmd.Parameters.AddWithValue("@district", yeniMusteri.District);
+                        cmd.Parameters.AddWithValue("@address", yeniMusteri.Address);
+                        cmd.Parameters.AddWithValue("@created_at", yeniMusteri.CreatedAt);
                         cmd.ExecuteNonQuery();
                         MessageBox.Show("Müşteri başarıyla eklendi.", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         this.Close();
