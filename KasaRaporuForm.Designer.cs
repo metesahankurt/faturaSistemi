@@ -82,6 +82,9 @@ namespace FaturaKasaSistemi
             this.dataGridView1.Size = new System.Drawing.Size(500, 250);
             this.dataGridView1.TabIndex = 5;
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView1.MultiSelect = false;
             // 
             // KasaRaporuForm
             // 

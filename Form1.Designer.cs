@@ -12,6 +12,7 @@ partial class Form1
     private System.Windows.Forms.Button btnCustomerForm;
     private System.Windows.Forms.Button btnKasaRaporu;
     private System.Windows.Forms.Button btnInvoiceSearch;
+    private System.Windows.Forms.Button btnCustomerList;
 
     /// <summary>
     ///  Clean up any resources being used.
@@ -39,6 +40,7 @@ partial class Form1
         btnCustomerForm = new Button();
         btnKasaRaporu = new Button();
         btnInvoiceSearch = new Button();
+        btnCustomerList = new Button();
         SuspendLayout();
         // 
         // btnProductForm
@@ -76,7 +78,7 @@ partial class Form1
         btnKasaRaporu.Location = new Point(30, 270);
         btnKasaRaporu.Name = "btnKasaRaporu";
         btnKasaRaporu.Size = new Size(150, 40);
-        btnKasaRaporu.TabIndex = 3;
+        btnKasaRaporu.TabIndex = 4;
         btnKasaRaporu.Text = "Kasa Raporu";
         btnKasaRaporu.UseVisualStyleBackColor = true;
         btnKasaRaporu.Click += btnKasaRaporu_Click;
@@ -86,21 +88,33 @@ partial class Form1
         btnInvoiceSearch.Location = new Point(30, 210);
         btnInvoiceSearch.Name = "btnInvoiceSearch";
         btnInvoiceSearch.Size = new Size(150, 40);
-        btnInvoiceSearch.TabIndex = 4;
+        btnInvoiceSearch.TabIndex = 3;
         btnInvoiceSearch.Text = "Fatura Ara/Listele";
         btnInvoiceSearch.UseVisualStyleBackColor = true;
         btnInvoiceSearch.Click += btnInvoiceSearch_Click;
+        // 
+        // btnCustomerList
+        // 
+        btnCustomerList.Location = new Point(30, 330);
+        btnCustomerList.Name = "btnCustomerList";
+        btnCustomerList.Size = new Size(150, 40);
+        btnCustomerList.TabIndex = 5;
+        btnCustomerList.Text = "Müşteriler";
+        btnCustomerList.UseVisualStyleBackColor = true;
+        btnCustomerList.Click += btnCustomerList_Click;
         // 
         // Form1
         // 
         AutoScaleDimensions = new SizeF(7F, 15F);
         AutoScaleMode = AutoScaleMode.Font;
         ClientSize = new Size(800, 450);
+        Controls.Clear();
         Controls.Add(btnProductForm);
         Controls.Add(btnInvoiceForm);
         Controls.Add(btnCustomerForm);
-        Controls.Add(btnKasaRaporu);
         Controls.Add(btnInvoiceSearch);
+        Controls.Add(btnKasaRaporu);
+        Controls.Add(btnCustomerList);
         Name = "Form1";
         StartPosition = FormStartPosition.CenterScreen;
         Text = "Dashboard";

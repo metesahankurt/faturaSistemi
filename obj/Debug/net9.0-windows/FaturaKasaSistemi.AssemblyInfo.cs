@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("FaturaKasaSistemi")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5a47742c356fecc370abd6f581ef29558978b856")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+515aa907193a491ab92046839bb00808d76a4fa7")]
 [assembly: System.Reflection.AssemblyProductAttribute("FaturaKasaSistemi")]
 [assembly: System.Reflection.AssemblyTitleAttribute("FaturaKasaSistemi")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

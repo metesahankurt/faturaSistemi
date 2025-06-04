@@ -67,5 +67,88 @@ namespace FaturaKasaSistemi
                 }
             }
         }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Lütfen silmek için bir ürün seçin.", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            var row = dataGridView1.SelectedRows[0];
+            int productId = Convert.ToInt32(row.Cells["id"].Value);
+
+            string connectionString = "server=localhost;database=faturakasa;user=root;password=199419033Mm.;";
+            using (MySqlConnection conn = new MySqlConnection(connectionString))
+            {
+                try
+                {
+                    conn.Open();
+                    string checkQuery = "SELECT COUNT(*) FROM invoice_items WHERE product_id = @id";
+                    using (MySqlCommand checkCmd = new MySqlCommand(checkQuery, conn))
+                    {
+                        checkCmd.Parameters.AddWithValue("@id", productId);
+                        int kullanilmaSayisi = Convert.ToInt32(checkCmd.ExecuteScalar());
+                        if (kullanilmaSayisi > 0)
+                        {
+                            var result = MessageBox.Show(
+                                "Bu ürün bir faturada kullanıldığı için silinemez.\nYine de silmek ister misiniz? (Bu ürünle ilgili tüm fatura satırları da silinecek!)",
+                                "Uyarı",
+                                MessageBoxButtons.YesNo,
+                                MessageBoxIcon.Warning);
+                            if (result == DialogResult.Yes)
+                            {
+                                // Önce invoice_items'tan sil
+                                string deleteItemsQuery = "DELETE FROM invoice_items WHERE product_id = @id";
+                                using (MySqlCommand delItemsCmd = new MySqlCommand(deleteItemsQuery, conn))
+                                {
+                                    delItemsCmd.Parameters.AddWithValue("@id", productId);
+                                    delItemsCmd.ExecuteNonQuery();
+                                }
+                                // Sonra ürünü sil
+                                string deleteProductQuery = "DELETE FROM products WHERE id = @id";
+                                using (MySqlCommand delProdCmd = new MySqlCommand(deleteProductQuery, conn))
+                                {
+                                    delProdCmd.Parameters.AddWithValue("@id", productId);
+                                    delProdCmd.ExecuteNonQuery();
+                                }
+                                MessageBox.Show("Ürün ve ilgili fatura satırları başarıyla silindi.", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                LoadProducts();
+                            }
+                            return;
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Veritabanı hatası: " + ex.Message, "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+            }
+
+            var result2 = MessageBox.Show("Seçili ürünü silmek istediğinize emin misiniz?", "Onay", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result2 == DialogResult.Yes)
+            {
+                using (MySqlConnection conn = new MySqlConnection(connectionString))
+                {
+                    try
+                    {
+                        conn.Open();
+                        string query = "DELETE FROM products WHERE id = @id";
+                        using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                        {
+                            cmd.Parameters.AddWithValue("@id", productId);
+                            cmd.ExecuteNonQuery();
+                        }
+                        MessageBox.Show("Ürün başarıyla silindi.", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        LoadProducts();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Veritabanı hatası: " + ex.Message, "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
+        }
     }
 } 

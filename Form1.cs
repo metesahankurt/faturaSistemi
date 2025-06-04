@@ -36,4 +36,10 @@ public partial class Form1 : Form
         InvoiceSearchForm searchForm = new InvoiceSearchForm();
         searchForm.ShowDialog();
     }
+
+    private void btnCustomerList_Click(object sender, EventArgs e)
+    {
+        CustomerListForm customerListForm = new CustomerListForm();
+        customerListForm.ShowDialog();
+    }
 }

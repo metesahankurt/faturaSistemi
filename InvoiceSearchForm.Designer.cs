@@ -12,6 +12,7 @@ namespace FaturaKasaSistemi
         private System.Windows.Forms.Label lblDateRange;
         private System.Windows.Forms.DateTimePicker dtpStart;
         private System.Windows.Forms.DateTimePicker dtpEnd;
+        private System.Windows.Forms.Button btnDeleteInvoice;
 
         protected override void Dispose(bool disposing)
         {
@@ -33,6 +34,7 @@ namespace FaturaKasaSistemi
             this.lblDateRange = new System.Windows.Forms.Label();
             this.dtpStart = new System.Windows.Forms.DateTimePicker();
             this.dtpEnd = new System.Windows.Forms.DateTimePicker();
+            this.btnDeleteInvoice = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -86,6 +88,9 @@ namespace FaturaKasaSistemi
             this.dataGridView1.Size = new System.Drawing.Size(580, 300);
             this.dataGridView1.TabIndex = 5;
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView1.MultiSelect = false;
             // 
             // lblDateRange
             // 
@@ -110,11 +115,21 @@ namespace FaturaKasaSistemi
             this.dtpEnd.Size = new System.Drawing.Size(120, 23);
             this.dtpEnd.TabIndex = 8;
             // 
+            // btnDeleteInvoice
+            // 
+            this.btnDeleteInvoice.Location = new System.Drawing.Point(20, 400);
+            this.btnDeleteInvoice.Name = "btnDeleteInvoice";
+            this.btnDeleteInvoice.Size = new System.Drawing.Size(120, 30);
+            this.btnDeleteInvoice.TabIndex = 9;
+            this.btnDeleteInvoice.Text = "Faturayı Sil";
+            this.btnDeleteInvoice.UseVisualStyleBackColor = true;
+            this.btnDeleteInvoice.Click += new System.EventHandler(this.btnDeleteInvoice_Click);
+            // 
             // InvoiceSearchForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(620, 380);
+            this.ClientSize = new System.Drawing.Size(620, 440);
             this.Controls.Add(this.lblCustomerName);
             this.Controls.Add(this.txtCustomerName);
             this.Controls.Add(this.lblInvoiceNo);
@@ -124,6 +139,7 @@ namespace FaturaKasaSistemi
             this.Controls.Add(this.lblDateRange);
             this.Controls.Add(this.dtpStart);
             this.Controls.Add(this.dtpEnd);
+            this.Controls.Add(this.btnDeleteInvoice);
             this.Name = "InvoiceSearchForm";
             this.Text = "Fatura Arama / Listeleme";
             this.Load += new System.EventHandler(this.InvoiceSearchForm_Load);
